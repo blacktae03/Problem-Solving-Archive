@@ -24,6 +24,18 @@ int main() {
 
     // cout << s;
 
-    cout << grd[0][1] << grd[5][7] << grd[10][30] << vis[30][30] << vis[3][3];
-    cout << '\n' << arr[20][20];
+//     cout << grd[0][1] << grd[5][7] << grd[10][30] << vis[30][30] << vis[3][3];
+//     cout << '\n' << arr[20][20];
+
+    vector<int> v;
+
+    v.push_back(10);
+    v.push_back(3);
+    v.push_back(5);
+
+    sort(v.begin(), v.end());
+
+    for (auto a : v) {
+        cout << a << ' ';
+    }
 }
