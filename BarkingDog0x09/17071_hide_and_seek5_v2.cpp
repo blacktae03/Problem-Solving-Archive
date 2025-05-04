@@ -45,12 +45,6 @@ int main() {
             dist[0][nx] = dist[0][cur] + 1;
             Q.push(nx);
 
-            // if (nx == 3 && dist[1][nx] > -1 && dist[1][nx] - dist[0][nx] >= 0 && ((dist[1][nx] - dist[0][nx]) % 2 == 0 || (dist[1][nx] - dist[0][nx]) % 3 == 0)) {
-            //     ans = dist[1][nx];
-            //     while(!Q.empty()) Q.pop();
-            //     break;
-            // }
-
             if (dist[1][nx] > -1 && dist[1][nx] >= dist[0][nx] && (dist[1][nx] - dist[0][nx]) % 2 == 0) {
                 ans = dist[1][nx];
                 found = true;
