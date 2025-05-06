@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 이 코드의 문제점 : 어떤 곳에 n번만에 갔으면 n+2번 때도 갈 수 있다는 것을 인지했으나,
+// 그 곳에 n번에도 갈 수 있고, n+1번에도 갈 수 있으면, 동생이 그 곳에 어떤 시간대에 가더라도 발견할 수 있음.
+// 하지만 n번에도 갈 수 있고, n+1번에도 갈 수 있을 때, n번만 기록됨. n+3번 때 동생이 그 곳에 가면 만날 수 있으나, 만날 수 없다고 처리됨.
+
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
@@ -19,6 +23,8 @@ int main() {
         dist[1][cur] = i;
         cur += i+1;
     }
+
+
 
     int dx[2] = {-1, 1};
     int ans = -1;
