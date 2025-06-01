@@ -1,0 +1,16 @@
+단어 블록 후 cmd + D : 그 단어마다 커서 생성
+opt + click : 클릭하는 위치마다 커서 생성 -> 완료하면 esc
+opt + up/down arrow : 해당 줄 위 또는 아래로 무빙 가능
+opt + shift + up/down arrow : 해당 줄 위 또는 아래로 복사
+cmd + / : 블록한 것 주석 처리
+opt + shift + i : 블록한 영역 줄마다 커서 생성
+opt + shift + drag : 드래그하는 영역 줄 마다 커서 생성
+cmd + up/down arrow : 코드 맨 위 또는 아래로 이동
+cmd + left/right arrow : 해당 줄 맨 왼쪽 또는 오른쪽으로 이동
+cmd + B : 사이드 바 없애기
+ctrl + P : 파일 찾기.
+ctrl + shift + ~(backquote) : 터미널 만들기
+
+F12 : 사용자 정의 함수를 정의한 부분을 바로 띄워줌. (peek)
+ctrl + shift + R : 블록한 부분을 파일, 함수, 또는 변수로 추출 및 생성 가능. (refactoring)
+블록 후 cmd + F2 : 블록한 부분이랑 같은 글자인 부분 다 바꿔줌
