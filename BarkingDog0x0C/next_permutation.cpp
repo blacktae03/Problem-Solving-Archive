@@ -12,6 +12,8 @@ int main() {
         cout << '\n';
     } while (next_permutation(b, b+3));
 
+    cout << b[0] << b[1] << b[2];
+
     cout << '\n';
 
     do {

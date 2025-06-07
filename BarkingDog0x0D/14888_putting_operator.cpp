@@ -17,10 +17,8 @@ int main() {
     for (int i = 0; i < 4; i++) {
         cin >> opercnt[i];
         fill(oper+tmp, oper+tmp+opercnt[i], i);
-        tmp = opercnt[i];
+        tmp += opercnt[i];
     }
-    
-    cout << oper[0] << ' ' << oper[1] << '\n';
 
     do {
         int sum = num[0];
