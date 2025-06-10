@@ -8,6 +8,8 @@
             "label": "g++.exe build active file(single)",
             "command": "g++",
             "args": [
+                "--std",
+                "c++17",
                 "-g",
                 "${file}",
                 "-o",
