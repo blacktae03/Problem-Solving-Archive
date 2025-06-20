@@ -76,6 +76,7 @@ int main() {
                             mr = 1;
                             sh.second.direction = 2;
                         }
+                        break; // case 마다 break 안넣어서 쳐 틀려서 나중에 풀려고 보류 한 게 ㅈㄴ 어이가없네
 
                     case 2:
                         mr += stmp;
@@ -85,6 +86,7 @@ int main() {
                             mr = R;
                             sh.second.direction = 1;
                         }
+                        break;
 
                     case 3:
                         mc += stmp;
@@ -94,6 +96,7 @@ int main() {
                             mc = C;
                             sh.second.direction = 4;
                         }
+                        break;
 
                     case 4:
                         mc -= stmp;
