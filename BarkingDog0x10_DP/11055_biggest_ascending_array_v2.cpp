@@ -1,3 +1,4 @@
+// 정답인 거 같은데 백준 서버 먹통 250625
 #include <bits/stdc++.h>
 using namespace std;
 
