@@ -3,7 +3,6 @@ using namespace std;
 
 int A, B;
 vector<pair<int, int>> V;
-queue<pair<int, int>> Q;
 
 int main() {
     ios::sync_with_stdio(0);
@@ -12,10 +11,11 @@ int main() {
     cin >> A >> B;
 
     V.push_back({A, 0});
-    Q.push({A, 0});
 
-    while(!Q.empty()) {
-        auto cur = Q.front(); Q.pop();
+    int idx = 0;
+    while(true) {
+        if (idx >= V.size()) break;
+        auto cur = V[idx++];
 
         for (int dir = 0; dir < 2; dir++) {
             bool in = 0;
@@ -36,10 +36,8 @@ int main() {
             // if (in) continue;
 
             V.push_back({nx, cur.second+1});
-            Q.push({nx, cur.second+1});
         }
     }
-
 
     cout << -1;
 }
