@@ -195,26 +195,45 @@ int main() {
 
         while (true) {
             bool haveToMove = 0;
+            int tscore = 0, tspot = 0;
 
             for (int i = 2; i < 6; i++) { // B 삭제할 거 있는지 확인.
                 if (B[0][i] && B[1][i] && B[2][i] && B[3][i]) {
                     delCol(i);
-                    score++;
+                    tscore++;
+                    tspot = i;
                     haveToMove = 1;
                 }
             }
             
-            for (int i = 5; i >= 0; i--) {
-                for (int j = 0; j < 4; j++) {
-                    if (!B[j][i]) continue;
-                    int cur = B[j][i];
-                    B[j][i] = 0;
-                    Bmove(bt[cur], bx[cur], by[cur], cur);
+            if (tscore) {
+                for (int i = tspot-tscore; i >= 0; i--) {
+                    for (int j = 3; j >= 0; j--) {
+                        int cur = B[j][i];
+    
+                        B[j][i+tscore] = cur;
+                        x[cur] = j;
+                        y[cur] = i+tscore;
+                    }
                 }
             }
             
+            
+            else {
+                for (int i = 5; i >= 0; i--) {
+                    for (int j = 0; j < 4; j++) {
+                        if (!B[j][i]) continue;
+                        int cur = B[j][i];
+                        B[j][i] = 0;
+                        Bmove(bt[cur], bx[cur], by[cur], cur);
+                    }
+                }
+            }
+            
+            score += tscore;
+            
             int tcnt = 0;
-
+            
             for (int i = 0; i < 2; i++) {
                 if (B[0][i] || B[1][i] || B[2][i] || B[3][i]) {
                     tcnt++;
@@ -234,28 +253,46 @@ int main() {
             
             if (!haveToMove) break;
         }
-
+        
         // cout << "B Complete " << turn << '\n';
         
         while (true) {
             bool haveToMove = 0;
+            int tscore = 0, tspot = 0;
             
             for (int i = 2; i < 6; i++) { // G 삭제할 거 있는지 확인.
                 if (G[i][0] && G[i][1] && G[i][2] && G[i][3]) {
                     delRow(i);
-                    score++;
+                    tscore++;
+                    tspot = i;
                     haveToMove = 1;
                 }
             }
             
-            for (int i = 5; i >= 0; i--) {
-                for (int j = 0; j < 4; j++) {
-                    if (!G[i][j]) continue;
-                    int cur = G[i][j];
-                    G[i][j] = 0;
-                    Gmove(gt[cur], gx[cur], gy[cur], cur);
+            if (tscore) {
+                for (int i = tspot-tscore; i >= 0; i--) {
+                    for (int j = 3; j >= 0; j--) {
+                        int cur = G[i][j];
+    
+                        G[i+tscore][j] = cur;
+                        x[cur] = i+tscore;
+                        y[cur] = j;
+                    }
                 }
             }
+
+            else {
+                for (int i = 5; i >= 0; i--) {
+                    for (int j = 0; j < 4; j++) {
+                        if (!G[i][j]) continue;
+                        int cur = G[i][j];
+                        G[i][j] = 0;
+                        Gmove(gt[cur], gx[cur], gy[cur], cur);
+                    }
+                }
+            }
+
+            score += tscore;
 
             int tcnt = 0;
             
@@ -283,7 +320,7 @@ int main() {
     }
 
     count();
-    // show();
+    show();
 
     cout << score << '\n' << cnt;
 }
