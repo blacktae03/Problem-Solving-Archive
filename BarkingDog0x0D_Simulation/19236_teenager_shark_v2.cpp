@@ -11,7 +11,6 @@ int score, ans;
 int dx[9] = {0,-1,-1,0,1,1,1,0,-1}; // 1~8만 유효값
 int dy[9] = {0,0,-1,-1,-1,0,1,1,1};
 
-
 void move() {
     for (int num = 1; num <= 16; num++) {
         if (NUM == 0) continue;
