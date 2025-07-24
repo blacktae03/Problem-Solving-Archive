@@ -20,14 +20,14 @@ int main() {
     }
 
     sort(T, T+N);
-    int end = T[0].E;
-    ans++;
+    int en = 0;
 
-    for (int i = 1; i < N; i++) {
-        if (T[i].S < end) {
+    for (int i = 0; i < N; i++) {
+        if (T[i].S < en) {
             ans++;
-            end = 
+            
         }
+        else en = T[i].E;
     }
 
     cout << ans;

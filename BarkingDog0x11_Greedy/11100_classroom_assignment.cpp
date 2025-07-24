@@ -17,7 +17,7 @@ int main() {
         T[i] = {s, e};
     }
 
-    sort(T, T+N);
+    // sort(T, T+N);
 
     ans.push_back(T[0].E);
 
