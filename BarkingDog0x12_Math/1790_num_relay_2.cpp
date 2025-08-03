@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int N, K, idx = 9, L, cnt, ans;
+int N, K, idx = 9, L, cnt, ans = 1;
 
 int main() {
     ios::sync_with_stdio(0);
@@ -15,7 +15,7 @@ int main() {
         N -= idx;
         idx *= 10;
     }
-    cout << "L == " << L << '\n';
+    // cout << "L == " << L << '\n';
 
     if (K > L) {
         cout << -1;
@@ -27,16 +27,19 @@ int main() {
     while(true) {
         cnt++;
 
-        if (K < idx) {
-            ans = idx/10 + (K+cnt-1) / cnt; // K == 10 일 때 10이 되어야 함.
-            cout << "1st ans == " << ans << '\n';
+        if (K <= idx * cnt) {
+            for (int i = 1; i < cnt; i++) ans *= 10;
+            ans--;
+            // cout << "beforehand ans == " << ans << '\n';
+            ans += (K+cnt-1) / cnt; // K == 10 일 때 10이 되어야 함.
+            // cout << "1st ans == " << ans << '\n';
             int tmp = K % cnt ? cnt - K % cnt : K % cnt;
             while (tmp--) ans /= 10;
             ans %= 10;
             break;
         }
 
-        K -= idx;
+        K -= idx * cnt;
         idx *= 10;
     }
 
