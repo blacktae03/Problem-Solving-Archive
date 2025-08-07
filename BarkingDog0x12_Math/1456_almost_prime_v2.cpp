@@ -1,17 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
+typedef long long ll;
 
-long long A, B, ans;
-vector<int> sieve(10000010, true); // 10Mb
+ll A, B, ans;
+vector<bool> sieve(10000010, true); // 10MB
 const int L = 10000000;
 
 void SOE() {
     sieve[1] = false;
     for (int i = 2; i*i <= L; i++) {
         if (!sieve[i]) continue;
-        for (int j = i*i; j <= L; j+=i) {
-            sieve[j] = false;
-        }
+        for (int j = i*i; j <= L; j+=i) sieve[j] = false;
     }
 }
 
@@ -23,11 +22,12 @@ int main() {
 
     cin >> A >> B;
     
-    for (long long i = 2; i*i <= B; i++) {
+    for (ll i = 2; i*i <= B; i++) {
         if (!sieve[i]) continue;
-        for (long long j = i*i; j <= B; j *= i) {
+        for (ll j = i*i; j <= B; j *= i) {
             if (j < A) continue;
             ans++;
+            if (j >= 1'000'000'000'000'0LL) break;
         }
     }
 
