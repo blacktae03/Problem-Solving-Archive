@@ -77,6 +77,8 @@
     "string_view": "cpp",
     "unordered_map": "cpp",
     "unordered_set": "cpp",
-    "valarray": "cpp"
+    "valarray": "cpp",
+    "__bit_reference": "cpp",
+    "forward_list": "cpp"
   }
 }

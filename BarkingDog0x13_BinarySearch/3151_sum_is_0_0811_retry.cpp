@@ -40,21 +40,21 @@ int main() {
 
         }
     } // O(N^2)
-    for (int i = 0; i < neg.size()-1; i++) {
-        for (int j = i+1; j < neg.size(); j++) {
-            NS.push_back(neg[i] + neg[j]);
-        }
-    } // O(N^2)
-    sort(PS.begin(), PS.end()); // O(N^2lgN^2)
-    sort(NS.begin(), NS.end());
+    // for (int i = 0; i < neg.size()-1; i++) {
+    //     for (int j = i+1; j < neg.size(); j++) {
+    //         NS.push_back(neg[i] + neg[j]);
+    //     }
+    // } // O(N^2)
+    // sort(PS.begin(), PS.end()); // O(N^2lgN^2)
+    // sort(NS.begin(), NS.end());
 
     for (auto p : pos) {
         p *= -1;
-        ans += upper_bound(NS.begin(), NS.end(), p) - lower_bound(NS.begin(), NS.end(), p); // (n,n,p)인 경우 O(NlgN^2)
+        // ans += upper_bound(NS.begin(), NS.end(), p) - lower_bound(NS.begin(), NS.end(), p); // (n,n,p)인 경우 O(NlgN^2)
     }
     for (auto n : neg) {
         n *= -1;
-        ans += upper_bound(PS.begin(), PS.end(), n) - lower_bound(PS.begin(), PS.end(), n); // (p,p,n)인 경우
+        // ans += upper_bound(PS.begin(), PS.end(), n) - lower_bound(PS.begin(), PS.end(), n); // (p,p,n)인 경우
     }
 
     cout << ans;
