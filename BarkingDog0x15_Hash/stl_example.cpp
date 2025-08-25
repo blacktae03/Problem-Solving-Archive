@@ -47,3 +47,7 @@ int main(void){
   unordered_multiset_example();
   unordered_map_example();
 }
+
+// hash의 erase, find, insert, update가 모두 O(1)인 이유는
+// 값에 해당하는 hash 값을 키값으로 갖기 때문에, 어떤 값을 찾을 때도 그 값으로 해시 값을 구해서 바로 찾을 수 있고 (find, erase, update)
+// 넣을 때도 그냥 해당하는 hash 값에 넣으면 되기 때문에 O(1)이다 ㄷㄷ;
