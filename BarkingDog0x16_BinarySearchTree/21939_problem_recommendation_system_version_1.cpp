@@ -31,7 +31,7 @@ int main() {
             mp[P] = L;
         }
 
-        else if (cmd == "solved") {\
+        else if (cmd == "solved") {
             auto tmp = mp.find(P);
             ms.erase({tmp->second, tmp->first});
             mp.erase(P);
