@@ -26,11 +26,11 @@ int main() {
     MS.insert(0);
 
     for (auto p : V) {
-        auto where = MS.lower_bound(p.second); // 최소 등수가 k일 때, k 이상인 가장 작은 iterator를 찾는다.
-        if (where == MS.begin()) MS.insert(1); // 키가 본인보다 큰 사람이 k보다 작은 팀이 없다는 뜻이므로 1명이 포함된 (자기 자신만 들어가 있는) 팀을 하나 더 만든다.
+        auto where = MS.upper_bound(p.second * -1); // 최소 등수가 k일 때, k 이상인 가장 작은 iterator를 찾는다.
+        if (where == MS.end()) MS.insert(-1); // 키가 본인보다 큰 사람이 k보다 작은 팀이 없다는 뜻이므로 1명이 포함된 (자기 자신만 들어가 있는) 팀을 하나 더 만든다.
         else {
-            where = prev(where); // 키가 큰 사람이 k보다 작으면서 가장 많은 팀에 들어가야 하므로, prev 한다.
-            MS.insert(*where+1); // 팀에 사람 추가.
+            // where = prev(where); // 키가 큰 사람이 k보다 작으면서 가장 많은 팀에 들어가야 하므로, prev 한다.
+            MS.insert(*where-1); // 팀에 사람 추가.
             MS.erase(where);
         }
     }
