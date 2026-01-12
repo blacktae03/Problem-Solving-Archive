@@ -1,0 +1,13 @@
+
+
+# Un-ignore all directories
+!*/
+
+# Un-ignore C++ source files
+!*.cpp
+
+# Ignore specific files and directories
+shortcut.txt
+.vscode/
+*.dSYM/
+*.exe
